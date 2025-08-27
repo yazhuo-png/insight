@@ -1,4 +1,4 @@
-/* main.css */
+/* main.css (Corrected Version) */
 :root { --theme-color: #4f46e5; --danger-color: #dc2626; --warning-color: #f59e0b; --success-color: #16a34a; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #374151; background-color: #111827; margin: 0; padding: 0; overflow: hidden; }
 #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
@@ -20,18 +20,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helv
 a { text-decoration: none; color: inherit; }
 
 
-/* Updated Category View Layout */
+/* --- CORRECTED HOMEPAGE LAYOUT --- */
 #category-view {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    height: 100%; /* Ensure it takes full height */
+    overflow: hidden; /* Prevent double scrollbars on the view itself */
 }
 
 #live-opportunities-board {
     padding: 30px;
     background-color: #f9fafb;
     border-bottom: 2px solid #e5e7eb;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent this top part from shrinking */
 }
 
 .board-header {
@@ -54,15 +55,14 @@ a { text-decoration: none; color: inherit; }
 }
 
 .category-center {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow this bottom part to take all remaining space */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    min-height: 0; /* A flexbox trick to make overflow-y work correctly in a flex child */
 }
 
 #category-matrix {
     padding: 30px;
-    overflow-y: auto;
+    overflow-y: auto; /* This container will now scroll independently */
     flex-grow: 1;
 }
-
