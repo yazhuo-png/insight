@@ -1,0 +1,276 @@
+/* enhanced-styles.css - 增强样式 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 全局字体优化 */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 页面加载动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 机会卡片增强动画 */
+.opportunity-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.opportunity-card:nth-child(1) { animation-delay: 0.1s; }
+.opportunity-card:nth-child(2) { animation-delay: 0.2s; }
+.opportunity-card:nth-child(3) { animation-delay: 0.3s; }
+.opportunity-card:nth-child(4) { animation-delay: 0.4s; }
+.opportunity-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* 类目矩阵行动画 */
+.cat-matrix-row {
+    animation: slideInLeft 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.cat-matrix-row:nth-child(2) { animation-delay: 0.1s; }
+.cat-matrix-row:nth-child(3) { animation-delay: 0.2s; }
+.cat-matrix-row:nth-child(4) { animation-delay: 0.3s; }
+.cat-matrix-row:nth-child(5) { animation-delay: 0.4s; }
+
+/* 机会卡片悬停效果增强 */
+.opportunity-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+}
+
+/* 优先级徽章增强 */
+.priority-badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.priority-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.opportunity-card:hover .priority-badge::before {
+    left: 100%;
+}
+
+/* 分数值动画 */
+.score-value {
+    position: relative;
+    display: inline-block;
+}
+
+.score-value::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--theme-color);
+    transition: width 0.3s ease;
+}
+
+.opportunity-card:hover .score-value::after {
+    width: 100%;
+}
+
+/* 类目矩阵增强 */
+.cat-matrix-row {
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-matrix-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, var(--theme-color), #6366f1);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.cat-matrix-row:hover::before {
+    transform: scaleY(1);
+}
+
+/* 标题下划线动画 */
+.board-header h2::after {
+    transition: width 0.3s ease;
+}
+
+.board-header:hover h2::after {
+    width: 80px;
+}
+
+/* 响应式优化 */
+@media (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+    }
+    
+    .cat-matrix-row {
+        grid-template-columns: 80px 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .cat-matrix-row {
+        grid-template-columns: 60px 1fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr;
+        padding: 12px 8px;
+        font-size: 0.9em;
+    }
+    
+    .cat-col-score {
+        font-size: 1.2em;
+    }
+    
+    .board-header h2 {
+        font-size: 1.6em;
+    }
+}
+
+/* 滚动条美化 */
+#category-matrix::-webkit-scrollbar {
+    width: 8px;
+}
+
+#category-matrix::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+#category-matrix::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+
+#category-matrix::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* 加载状态 */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--border-light);
+    border-top: 2px solid var(--theme-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 数据更新提示 */
+.data-update-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--success-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.data-update-indicator.show {
+    transform: translateX(0);
+}
+
+/* 工具提示 */
+.tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-primary);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
+
+/* 脉冲效果增强 */
+@keyframes enhancedPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+    }
+}
+
+.live-indicator {
+    animation: enhancedPulse 2s infinite;
+}

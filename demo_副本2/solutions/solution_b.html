@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFM Proposal: Aegis Thermo-Case</title>
+    <link rel="stylesheet" href="./solution_style.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>可制造性设计提案 (DFM Proposal)</h1>
+        <p class="subtitle">方案B: Aegis Thermo-Case (神盾恒温壳)</p>
+    </div>
+    <div class="content">
+        <a href="../index.html" class="back-link">&larr; 返回战略组合</a>
+
+        <!-- Section 1: Final Product Specifications -->
+        <div class="section">
+            <h2>1. 最终产品规格 (Final Product Specifications)</h2>
+            <table class="param-table">
+                <tbody>
+                    <tr><th>产品名称</th><td>Aegis Thermo-Case (神盾恒温壳)</td></tr>
+                    <tr><th>产品型号</th><td>ATC-2401-IP16P (以iPhone 16 Pro版为例)</td></tr>
+                    <tr><th>产品形态</th><td>集成被动保温材料的日常手机保护壳</td></tr>
+                    <tr><th>适配机型</th><td>iPhone 16 Pro, Huawei Pura 70 Pro (首发)</td></tr>
+                    <tr><th class="highlight">核心性能指标</th><td class="highlight">在-10℃环境、手机待机状态下，2小时内电池温度下降速度延缓 ≥ 50% (对比裸机)</td></tr>
+                    <tr><th>产品厚度</th><td>11.5mm (比普通官方硅胶壳厚约2mm)</td></tr>
+                    <tr><th>产品重量</th><td>45g (比普通官方硅胶壳重约15g)</td></tr>
+                    <tr><th>跌落防护</th><td>符合 MIL-STD-810H 1.5米跌落标准</td></tr>
+                    <tr><th>无线充电</th><td>兼容 MagSafe 及主流 Qi 无线充电协议</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 2: Bill of Materials & Structural Design -->
+        <div class="section">
+            <h2>2. 材料清单 (BOM) 与产品结构设计</h2>
+            <h3>2.1 多层结构剖面图</h3>
+            <div class="diagram">
+                <img src="https://i.ibb.co/L5hY523/structure-diagram.png" alt="Aegis Thermo-Case 剖面结构图">
+                <p>[AI 生成 - Aegis Thermo-Case 手机壳剖面结构示意图]</p>
+            </div>
+            <h3>2.2 分层材料与成本明细 (基于10万件产量)</h3>
+            <table class="param-table bom-table">
+                <thead><tr><th>组件</th><th>材料规格</th><th>BOM成本 (元)</th><th>功能与选材理由</th></tr></thead>
+                <tbody>
+                    <tr><td>外壳框架</td><td>拜耳 Makrolon® 聚碳酸酯 (PC)</td><td>6.00</td><td>提供刚性支撑和抗冲击保护。</td></tr>
+                    <tr><td>内层缓冲</td><td>液态硅胶 (LSR)</td><td>4.50</td><td>提供柔软缓冲，按键手感好。</td></tr>
+                    <tr><td>保温核心</td><td>0.8mm 真空绝热板 (VIP)</td><td>10.00</td><td>核心保温材料，嵌入PC与LSR之间。低导热系数。</td></tr>
+                    <tr><td>内部衬里</td><td>超细纤维 (Microfiber)</td><td>1.50</td><td>保护手机背板，防止刮伤。</td></tr>
+                    <tr><td>磁吸模组</td><td>N52级钕铁硼磁铁阵列</td><td>2.50</td><td>确保MagSafe兼容性。</td></tr>
+                    <tr><td colspan="2"><strong>其他 (加工费, 包装等)</strong></td><td>2.00</td><td></td></tr>
+                    <tr><td colspan="2" style="font-weight:bold;">合计</td><td style="font-weight:bold;">¥26.50</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Section 3: Manufacturing Process -->
+        <div class="section">
+            <h2>3. 关键制造工艺 (Key Manufacturing Process)</h2>
+            <p>采用<strong>双色注塑 (Double-shot Injection) + 嵌件注塑 (Insert Molding)</strong> 的复合工艺。</p>
+            <ol>
+                <li><strong>第一步 (嵌件):</strong> 将预先切割好的VIP板材和磁吸模组精准地放入第一套模具中。</li>
+                <li><strong>第二步 (硬胶):</strong> 进行第一次注塑，用PC材料完成手机壳的硬质外框架，将VIP板和磁铁固定。</li>
+                <li><strong>第三步 (软胶):</strong> 将半成品移至第二套模具中，进行第二次注塑，用LSR液态硅胶完成内层缓冲和柔软按键部分。</li>
+                <li><strong>第四步 (后处理):</strong> 贴合内部超细纤维衬里，并进行全功能测试（跌落、保温、无线充电）。</li>
+            </ol>
+        </div>
+
+        <!-- Section 4: Industrial Design & Packaging -->
+        <div class="section">
+            <h2>4. 工业设计与包装 (Industrial Design & Packaging)</h2>
+            <h3>4.1 CMF (颜色、材质、表面处理)</h3>
+            <ul>
+                <li><strong>颜色 (Color):</strong> 首发提供远峰蓝、岩石灰、松针绿。</li>
+                <li><strong>材质 (Material):</strong> 外层硬质PC部分为微磨砂质感，内层及边框为亲肤硅胶质感。</li>
+                <li><strong>设计语言:</strong> 简约、功能性。侧边刻有“AEGIS THERMAL”字样，低调彰显其特殊功能。</li>
+            </ul>
+        </div>
+
+        <!-- Section 5: Next Steps -->
+        <div class="section next-steps">
+            <h2>5. 下一步行动计划 (交付下游)</h2>
+            <ul>
+                <li><strong>To 设计/工程团队:</strong> 基于主流机型（iPhone 16 Pro）进行3D建模和模具设计，特别注意VIP板的避空和保护设计。</li>
+                <li><strong>To 供应链团队:</strong> 寻找具备双色注塑和嵌件注塑能力的A级供应商。采购VIP板样品，测试其在注塑过程中的耐压性和稳定性。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

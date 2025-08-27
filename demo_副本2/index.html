@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵犀洞察平台 - AI自动化决策引擎</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/enhanced-styles.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="console-container">
+        <header class="console-header">
+            <div class="console-title">灵犀洞察平台</div>
+            <div class="system-status"><span class="live-indicator"></span><span>数据实时分析中</span></div>
+        </header>
+        <main id="main-panel" class="main-panel">
+            <!-- Level 1: Category View - UPDATED STRUCTURE -->
+            <div id="category-view" class="view">
+                <!-- NEW: Live Opportunities Board -->
+                <div id="live-opportunities-board" class="opportunities-board">
+                    <div class="board-header">
+                        <h2>实时机会场景看板</h2>
+                        <p>AI洞察师7x24小时扫描全网，自动呈现Top 5高价值场景机会</p>
+                    </div>
+                    <div id="opportunity-cards-container" class="cards-container">
+                        <!-- Opportunity cards will be rendered here by JS -->
+                    </div>
+                </div>
+
+                <!-- EXISTING: Category Monitoring Center -->
+                <div class="category-center">
+                    <div class="view-header-static">
+                        <h2>机会类目监控中心</h2>
+                        <p>点击任一类目，下钻分析该领域内的所有场景机会</p>
+                    </div>
+                    <div id="category-matrix"></div>
+                </div>
+            </div>
+
+            <!-- Level 2: Persona/Scene Grid View -->
+            <div id="persona-grid-view" class="view">
+                <header class="view-header">
+                    <button class="back-button" title="返回类目列表">‹</button>
+                    <div>
+                        <h2 id="view-title" class="view-title"></h2>
+                        <p id="view-subtitle" class="view-subtitle"></p>
+                    </div>
+                </header>
+                <div id="persona-grid-scroll-container">
+                    <div id="methodology-card-container"></div>
+                    <div id="persona-table-container">
+                        <table id="persona-table" class="persona-table">
+                            <thead><tr><th>优先级</th><th>场景ID</th><th>人群</th><th>场景</th><th>场景热度增长</th><th>机会分</th><th>AI决策</th><th>操作</th></tr></thead>
+                            <tbody id="persona-grid-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 3: Dossier View -->
+            <div id="dossier-view" class="view">
+                <header class="view-header">
+                    <button class="back-button" title="返回场景列表">‹</button>
+                    <h2 id="dossier-title-header" class="view-title"></h2>
+                </header>
+                <div id="dossier-scroll-container" class="dossier-scroll-container"></div>
+            </div>
+
+            <!-- Level 4: Strategic Proposal View -->
+            <div id="proposal-view" class="view">
+                 <header class="view-header">
+                    <button class="back-button" title="返回尽调档案">‹</button>
+                    <h2 id="proposal-title-header" class="view-title"></h2>
+                </header>
+                <div id="proposal-scroll-container" class="dossier-scroll-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Libraries -->
+    <script src="./assets/js/lib/particles.min.js"></script>
+    <!-- Data -->
+    <script src="./assets/js/data/data-model.js"></script>
+    <!-- Helpers -->
+    <script src="./assets/js/lib/chart-helper.js"></script>
+    <!-- Views (Component Logic) -->
+    <script src="./assets/js/views/category-view.js"></script>
+    <script src="./assets/js/views/persona-view.js"></script>
+    <script src="./assets/js/views/dossier-view.js"></script>
+    <script src="./assets/js/views/proposal-view.js"></script>
+    <!-- Main Application Logic -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
