@@ -1,4 +1,4 @@
-/* main.css (Corrected Version) */
+/* main.css (Corrected and Final Version) */
 :root { --theme-color: #4f46e5; --danger-color: #dc2626; --warning-color: #f59e0b; --success-color: #16a34a; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #374151; background-color: #111827; margin: 0; padding: 0; overflow: hidden; }
 #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
